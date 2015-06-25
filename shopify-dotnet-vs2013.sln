@@ -24,6 +24,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shopify.WebTest", "test-bed
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shopify.MvcTest", "test-bed\Shopify.MvcTest\Shopify.MvcTest.csproj", "{4890C5CC-1019-49BD-A378-BED00763986C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shopify.OAuth (NET20)", "source\Shopify.OAuth (NET20)\Shopify.OAuth (NET20).csproj", "{D3D8073E-63AE-4558-BD1B-351D413F0F38}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -42,6 +44,10 @@ Global
 		{4890C5CC-1019-49BD-A378-BED00763986C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4890C5CC-1019-49BD-A378-BED00763986C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4890C5CC-1019-49BD-A378-BED00763986C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D3D8073E-63AE-4558-BD1B-351D413F0F38}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D3D8073E-63AE-4558-BD1B-351D413F0F38}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D3D8073E-63AE-4558-BD1B-351D413F0F38}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D3D8073E-63AE-4558-BD1B-351D413F0F38}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -50,5 +56,6 @@ Global
 		{B9C39BEC-13BF-43EC-BDC8-BC546D768195} = {CF2E563C-EB77-403D-A722-146F73C1BF0D}
 		{766130BA-57DF-4CDA-8B2C-298C0AEDEC4E} = {4966A980-89ED-4CA1-9A45-A1272E9BCBC0}
 		{4890C5CC-1019-49BD-A378-BED00763986C} = {4966A980-89ED-4CA1-9A45-A1272E9BCBC0}
+		{D3D8073E-63AE-4558-BD1B-351D413F0F38} = {CF2E563C-EB77-403D-A722-146F73C1BF0D}
 	EndGlobalSection
 EndGlobal
