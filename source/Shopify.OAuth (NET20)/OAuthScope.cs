@@ -27,7 +27,7 @@ namespace Jsinh.Shopify.OAuth
         /// <summary>
         /// Default and no authorization scope applied in this case.
         /// </summary>
-        None = 0,
+        none = 0,
 
         /// <summary>
         /// Read only access to article, blog, comment, page and redirect.
