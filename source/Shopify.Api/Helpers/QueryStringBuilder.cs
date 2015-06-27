@@ -18,7 +18,6 @@ namespace Jsinh.Shopify.Api
 
     using System;
     using System.Collections.Generic;
-    using System.Linq;
     using System.Text;
     
     #endregion
@@ -59,7 +58,9 @@ namespace Jsinh.Shopify.Api
         {
             get
             {
-                return this.paramValueCollection.Keys.ToArray();
+                var keyArray = new string[this.paramValueCollection.Keys.Count];
+                this.paramValueCollection.Keys.CopyTo(keyArray, 0);
+                return keyArray;
             }
         }
 
