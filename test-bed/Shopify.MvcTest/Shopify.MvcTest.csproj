@@ -50,6 +50,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="Shopify.OAuth">
+      <HintPath>..\..\packages\Shopify.OAuth.0.6.3\lib\net45\Shopify.OAuth.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -176,12 +179,6 @@
       <SubType>Designer</SubType>
     </Content>
     <None Include="Project_Readme.html" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\source\Shopify.OAuth %28NET20%29\Shopify.OAuth %28NET20%29.csproj">
-      <Project>{d3d8073e-63ae-4558-bd1b-351d413f0f38}</Project>
-      <Name>Shopify.OAuth %28NET20%29</Name>
-    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
