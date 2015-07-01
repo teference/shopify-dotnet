@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Jsinh.Shopify.OAuth {
+namespace Jsinh.Shopify.Api {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace Jsinh.Shopify.OAuth {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Jsinh.Shopify.OAuth.AppResources", typeof(AppResources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Jsinh.Shopify.Api.AppResources", typeof(AppResources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -61,7 +61,7 @@ namespace Jsinh.Shopify.OAuth {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to https://{0}.myshopify.com/admin/oauth/access_token.
+        ///   Looks up a localized string similar to https://{0}/admin/oauth/access_token.
         /// </summary>
         internal static string AccessTokenUrl {
             get {
@@ -88,11 +88,47 @@ namespace Jsinh.Shopify.OAuth {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to client_id.
+        /// </summary>
+        internal static string ClientIdKeyword {
+            get {
+                return ResourceManager.GetString("ClientIdKeyword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to client_secret.
+        /// </summary>
+        internal static string ClientSecretKeyword {
+            get {
+                return ResourceManager.GetString("ClientSecretKeyword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to code.
+        /// </summary>
+        internal static string CodeKeyword {
+            get {
+                return ResourceManager.GetString("CodeKeyword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to application/x-www-form-urlencoded.
         /// </summary>
         internal static string DefaultHttpClientContentType {
             get {
                 return ResourceManager.GetString("DefaultHttpClientContentType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to hmac.
+        /// </summary>
+        internal static string HmacKeyword {
+            get {
+                return ResourceManager.GetString("HmacKeyword", resourceCulture);
             }
         }
         
@@ -115,11 +151,11 @@ namespace Jsinh.Shopify.OAuth {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to shopify-dotnet-shop-name.
+        ///   Looks up a localized string similar to .myshopify.com.
         /// </summary>
-        internal static string KeyShopifyShopName {
+        internal static string MyShopifyDomain {
             get {
-                return ResourceManager.GetString("KeyShopifyShopName", resourceCulture);
+                return ResourceManager.GetString("MyShopifyDomain", resourceCulture);
             }
         }
         
@@ -133,11 +169,29 @@ namespace Jsinh.Shopify.OAuth {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to shop.
+        /// </summary>
+        internal static string ShopKeyword {
+            get {
+                return ResourceManager.GetString("ShopKeyword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Shop name configuration &apos;shopify-dotnet-shop-name&apos; key / value missing.
         /// </summary>
         internal static string ShopNameNotFoundException {
             get {
                 return ResourceManager.GetString("ShopNameNotFoundException", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to timestamp.
+        /// </summary>
+        internal static string TimestampKeyword {
+            get {
+                return ResourceManager.GetString("TimestampKeyword", resourceCulture);
             }
         }
     }

@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AccessTokenUrl" xml:space="preserve">
-    <value>https://{0}.myshopify.com/admin/oauth/access_token</value>
+    <value>https://{0}/admin/oauth/access_token</value>
   </data>
   <data name="ApiKeyNotFoundException" xml:space="preserve">
     <value>API key configuration 'shopify-dotnet-api-key' key / value missing</value>
@@ -126,8 +126,20 @@
   <data name="AuthorizationUrl" xml:space="preserve">
     <value>https://{0}.myshopify.com/admin/oauth/authorize?client_id={1}&amp;scope={2}</value>
   </data>
+  <data name="ClientIdKeyword" xml:space="preserve">
+    <value>client_id</value>
+  </data>
+  <data name="ClientSecretKeyword" xml:space="preserve">
+    <value>client_secret</value>
+  </data>
+  <data name="CodeKeyword" xml:space="preserve">
+    <value>code</value>
+  </data>
   <data name="DefaultHttpClientContentType" xml:space="preserve">
     <value>application/x-www-form-urlencoded</value>
+  </data>
+  <data name="HmacKeyword" xml:space="preserve">
+    <value>hmac</value>
   </data>
   <data name="KeyShopifyApiKey" xml:space="preserve">
     <value>shopify-dotnet-api-key</value>
@@ -135,13 +147,19 @@
   <data name="KeyShopifyAppSecret" xml:space="preserve">
     <value>shopify-dotnet-secret-key</value>
   </data>
-  <data name="KeyShopifyShopName" xml:space="preserve">
-    <value>shopify-dotnet-shop-name</value>
+  <data name="MyShopifyDomain" xml:space="preserve">
+    <value>.myshopify.com</value>
   </data>
   <data name="SecretKeyNotFoundException" xml:space="preserve">
     <value>Secret key configuration ' shopify-dotnet-secret-key' key /value missing</value>
   </data>
+  <data name="ShopKeyword" xml:space="preserve">
+    <value>shop</value>
+  </data>
   <data name="ShopNameNotFoundException" xml:space="preserve">
     <value>Shop name configuration 'shopify-dotnet-shop-name' key / value missing</value>
+  </data>
+  <data name="TimestampKeyword" xml:space="preserve">
+    <value>timestamp</value>
   </data>
 </root>

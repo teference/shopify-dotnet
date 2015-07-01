@@ -1,4 +1,16 @@
-﻿namespace Jsinh.Shopify.OAuth
+﻿#region Copyright Jsinh.in
+// ************************************************************************************
+// <copyright file="ConfigurationExtensions.cs" company="Jsinh.in">
+// Copyright © Jaspalsinh Chauhan (Jsinh) 2015. All right reserved.
+// </copyright>
+// ************************************************************************************
+// <author>Jaspalsinh Chauhan</author>
+// <email>jachauhan@gmail.com</email>
+// <project>Jsinh - Shopify OAuth Helper</project>
+// ************************************************************************************
+#endregion
+
+namespace Jsinh.Shopify.Api
 {
     #region Namespace
 
@@ -17,28 +29,9 @@
             }
 
             var configuration = shopifyOAuth.Configuration ?? new OAuthConfiguration();
-            LoadShopifyShopNameSetting(configuration);
             LoadShopifyApiKeySetting(configuration);
             LoadShopifySecretKeySetting(configuration);
             return configuration;
-        }
-
-        private static void LoadShopifyShopNameSetting(OAuthConfiguration configuration)
-        {
-            if (!string.IsNullOrEmpty(configuration.ShopName))
-            {
-                return;
-            }
-
-            var shopNameConfigurationValue = ConfigurationManager.AppSettings[AppResources.KeyShopifyShopName];
-            if (!string.IsNullOrEmpty(shopNameConfigurationValue))
-            {
-                configuration.ShopName = shopNameConfigurationValue.ToLowerInvariant();
-            }
-            else
-            {
-                throw new ArgumentException(AppResources.ShopNameNotFoundException);
-            }
         }
 
         private static void LoadShopifyApiKeySetting(OAuthConfiguration configuration)

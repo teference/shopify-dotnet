@@ -7,7 +7,7 @@
     <ProjectGuid>{D3D8073E-63AE-4558-BD1B-351D413F0F38}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Jsinh.Shopify.OAuth</RootNamespace>
+    <RootNamespace>Jsinh.Shopify.Api</RootNamespace>
     <AssemblyName>Shopify.OAuth</AssemblyName>
     <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -35,8 +35,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\packages\Newtonsoft.Json.7.0.1\lib\net20\Newtonsoft.Json.dll</HintPath>
-      <Private>True</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
@@ -48,7 +48,7 @@
     <Compile Include="..\Shopify.Api\HttpType.cs">
       <Link>HttpType.cs</Link>
     </Compile>
-    <Compile Include="AppResources.Designer.cs">
+    <Compile Include="AppResources1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>AppResources.resx</DependentUpon>
@@ -65,7 +65,7 @@
   <ItemGroup>
     <EmbeddedResource Include="AppResources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>AppResources.Designer.cs</LastGenOutput>
+      <LastGenOutput>AppResources1.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

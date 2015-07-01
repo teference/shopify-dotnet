@@ -1,4 +1,16 @@
-﻿namespace Jsinh.Shopify.OAuth
+﻿#region Copyright Jsinh.in
+// ************************************************************************************
+// <copyright file="ScopeBuilder.cs" company="Jsinh.in">
+// Copyright © Jaspalsinh Chauhan (Jsinh) 2015. All right reserved.
+// </copyright>
+// ************************************************************************************
+// <author>Jaspalsinh Chauhan</author>
+// <email>jachauhan@gmail.com</email>
+// <project>Jsinh - Shopify OAuth Helper</project>
+// ************************************************************************************
+#endregion
+
+namespace Jsinh.Shopify.Api
 {
     #region Namespace
 

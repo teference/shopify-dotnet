@@ -48,13 +48,13 @@ namespace Jsinh.Shopify.Api
 
         #region Properties
 
-        public char? StartsWith { get; set; }
+        internal char? StartsWith { get; set; }
 
-        public char SeperatesWith { get; set; }
+        internal char SeperatesWith { get; set; }
 
-        public char ParamValueJoinsWith { get; set; }
+        internal char ParamValueJoinsWith { get; set; }
 
-        public string[] Keys
+        internal string[] Keys
         {
             get
             {
@@ -64,7 +64,7 @@ namespace Jsinh.Shopify.Api
             }
         }
 
-        public string this[string param]
+        internal string this[string param]
         {
             get
             {
@@ -80,21 +80,6 @@ namespace Jsinh.Shopify.Api
         #endregion
 
         #region Methods
-
-        public bool ContainsParam(string paramName)
-        {
-            return this.paramValueCollection.ContainsKey(paramName);
-        }
-
-        public void Add(string param, string value)
-        {
-            this.paramValueCollection[param] = value;
-        }
-
-        public void Remove(string paramName)
-        {
-            this.paramValueCollection.Remove(paramName);
-        }
 
         public override string ToString()
         {
@@ -120,6 +105,21 @@ namespace Jsinh.Shopify.Api
             }
 
             return tempQueryStringBuilder.ToString();
+        }
+
+        internal bool ContainsParam(string paramName)
+        {
+            return this.paramValueCollection.ContainsKey(paramName);
+        }
+
+        internal void Add(string param, string value)
+        {
+            this.paramValueCollection[param] = value;
+        }
+
+        internal void Remove(string paramName)
+        {
+            this.paramValueCollection.Remove(paramName);
         }
 
         #endregion

@@ -6,15 +6,18 @@ using System.Web.Mvc;
 
 namespace Shopify.MvcTest.Controllers
 {
+    using Jsinh.Shopify.Api;
+
     public class HomeController : Controller
     {
         public ActionResult Index()
         {
-            return View();
+            return Redirect(MvcApplication.ShopifyAuthentication.GetOAuthUrl("someshop.myshopify.com", OAuthScope.read_themes | OAuthScope.write_themes | OAuthScope.write_products));
         }
 
         public ActionResult About()
         {
+            var result = MvcApplication.ShopifyAuthentication.AuthorizeClient(Request.QueryString);
             ViewBag.Message = "Your application description page.";
 
             return View();

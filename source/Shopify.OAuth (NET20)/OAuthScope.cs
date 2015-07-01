@@ -10,7 +10,7 @@
 // ************************************************************************************
 #endregion
 
-namespace Jsinh.Shopify.OAuth
+namespace Jsinh.Shopify.Api
 {
     #region Namespace
 
