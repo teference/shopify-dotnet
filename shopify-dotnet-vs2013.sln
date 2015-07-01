@@ -26,6 +26,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shopify.MvcTest", "test-bed
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shopify.OAuth (NET20)", "source\Shopify.OAuth (NET20)\Shopify.OAuth (NET20).csproj", "{D3D8073E-63AE-4558-BD1B-351D413F0F38}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "release", "release", "{F3A58C7D-FAEF-4314-A905-FAB500FCF3DB}"
+	ProjectSection(SolutionItems) = preProject
+		release\Shopify.OAuth.0.6.3.nupkg = release\Shopify.OAuth.0.6.3.nupkg
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -57,5 +62,6 @@ Global
 		{766130BA-57DF-4CDA-8B2C-298C0AEDEC4E} = {4966A980-89ED-4CA1-9A45-A1272E9BCBC0}
 		{4890C5CC-1019-49BD-A378-BED00763986C} = {4966A980-89ED-4CA1-9A45-A1272E9BCBC0}
 		{D3D8073E-63AE-4558-BD1B-351D413F0F38} = {CF2E563C-EB77-403D-A722-146F73C1BF0D}
+		{F3A58C7D-FAEF-4314-A905-FAB500FCF3DB} = {3BA9BECF-5433-4C34-A9DC-B8B9477428F3}
 	EndGlobalSection
 EndGlobal

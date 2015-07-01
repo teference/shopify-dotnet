@@ -1,36 +1,43 @@
-﻿using System.Reflection;
-using System.Runtime.CompilerServices;
+﻿#region Copyright Jsinh.in
+// ************************************************************************************
+// <copyright file="AssemblyInfo.cs" company="Jsinh.in">
+// Copyright © Jaspalsinh Chauhan (Jsinh) 2015. All right reserved.
+// </copyright>
+// ************************************************************************************
+// <author>Jaspalsinh Chauhan</author>
+// <email>jachauhan@gmail.com</email>
+// <project>Jsinh - Shopify OAuth Helper</project>
+// ************************************************************************************
+#endregion
+
+#region Namespace
+
+using System;
+using System.Reflection;
+using System.Resources;
 using System.Runtime.InteropServices;
 
-// General Information about an assembly is controlled through the following 
-// set of attributes. Change these attribute values to modify the information
-// associated with an assembly.
-[assembly: AssemblyTitle("Shopify.OAuth (NET20)")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Shopify.OAuth (NET20)")]
-[assembly: AssemblyCopyright("Copyright ©  2015")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
+#endregion
 
-// Setting ComVisible to false makes the types in this assembly not visible 
-// to COM components.  If you need to access a type in this assembly from 
-// COM, set the ComVisible attribute to true on that type.
+#region Common information
+
+[assembly: AssemblyTitle("Shopify.OAuth")]
+[assembly: AssemblyDescription("Perform Shopify OAuth 2.0 - authentication / authorization to access Shopify API")]
+[assembly: AssemblyCompany("Jsinh - http://jsinh.in")]
+[assembly: AssemblyProduct("Shopify API OAuth C#.NET SDK")]
+[assembly: AssemblyCopyright("Copyright © Jaspalsinh Chauhan (Jsinh) 2015")]
+[assembly: NeutralResourcesLanguage("en")]
 [assembly: ComVisible(false)]
+[assembly: CLSCompliant(true)]
 
-// The following GUID is for the ID of the typelib if this project is exposed to COM
+#endregion
+
+#region Version information
+
+[assembly: AssemblyVersion("0.6.3")]
 [assembly: Guid("5e62620f-eaee-44dc-a979-e8022d01a060")]
 
-// Version information for an assembly consists of the following four values:
-//
-//      Major Version
-//      Minor Version 
-//      Build Number
-//      Revision
-//
-// You can specify all the values or you can default the Build and Revision Numbers 
-// by using the '*' as shown below:
-// [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.0.0.0")]
-[assembly: AssemblyFileVersion("1.0.0.0")]
+#endregion
+
+#region Unit test configurations
+#endregion
