@@ -13,7 +13,7 @@
 
     public sealed class ShopifyWebhook : IShopifyWebhook
     {
-        IList<Webhook> All()
+        public IList<Webhook> All()
         {
             return null;
         }
