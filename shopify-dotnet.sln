@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{C168AC33-D22F-4453-9E85-51245F5EFA41}"
 	ProjectSection(SolutionItems) = preProject
@@ -31,6 +31,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "release", "release", "{F3A5
 		release\Shopify.OAuth.0.6.3.nupkg = release\Shopify.OAuth.0.6.3.nupkg
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shopify.ApiTest", "test-bed\Shopify.ApiTest\Shopify.ApiTest.csproj", "{F7735012-821F-44D6-A0CB-3D96EE9FCB89}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -53,6 +55,10 @@ Global
 		{D3D8073E-63AE-4558-BD1B-351D413F0F38}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D3D8073E-63AE-4558-BD1B-351D413F0F38}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D3D8073E-63AE-4558-BD1B-351D413F0F38}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F7735012-821F-44D6-A0CB-3D96EE9FCB89}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7735012-821F-44D6-A0CB-3D96EE9FCB89}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F7735012-821F-44D6-A0CB-3D96EE9FCB89}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F7735012-821F-44D6-A0CB-3D96EE9FCB89}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -63,5 +69,6 @@ Global
 		{4890C5CC-1019-49BD-A378-BED00763986C} = {4966A980-89ED-4CA1-9A45-A1272E9BCBC0}
 		{D3D8073E-63AE-4558-BD1B-351D413F0F38} = {CF2E563C-EB77-403D-A722-146F73C1BF0D}
 		{F3A58C7D-FAEF-4314-A905-FAB500FCF3DB} = {3BA9BECF-5433-4C34-A9DC-B8B9477428F3}
+		{F7735012-821F-44D6-A0CB-3D96EE9FCB89} = {4966A980-89ED-4CA1-9A45-A1272E9BCBC0}
 	EndGlobalSection
 EndGlobal

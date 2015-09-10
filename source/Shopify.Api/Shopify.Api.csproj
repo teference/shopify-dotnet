@@ -42,7 +42,22 @@
     <Compile Include="HttpType.cs" />
     <Compile Include="Impl\ShopifyWebhook.cs" />
     <Compile Include="IShopifyClient.cs" />
+    <Compile Include="Models\Enums\WebhookFormat.cs" />
+    <Compile Include="Models\Enums\WebhookTopic.cs" />
     <Compile Include="Models\Facets\Webhook.cs" />
+    <Compile Include="Models\Internals\ApiRequestResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ApiRequestResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Internals\InternalExtensions.cs" />
+    <Compile Include="Models\Internals\Webhook\WebhookUpdateJson.cs" />
+    <Compile Include="Models\Internals\Webhook\WebhookCreateJson.cs" />
+    <Compile Include="Models\Internals\Webhook\WebhookUpdateWrapJson.cs" />
+    <Compile Include="Models\Internals\Webhook\WebhookCreateWrapJson.cs" />
+    <Compile Include="Models\Internals\Webhook\WebhookJson.cs" />
+    <Compile Include="Models\Internals\Webhook\WebhooksCountJson.cs" />
+    <Compile Include="Models\Internals\Webhook\WebhooksJson.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ShopifyClient.cs" />
   </ItemGroup>
@@ -79,9 +94,12 @@
     <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Models\Enums\" />
-    <Folder Include="Models\Internals\" />
+    <EmbeddedResource Include="Models\Internals\ApiRequestResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ApiRequestResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
