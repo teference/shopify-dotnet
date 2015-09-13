@@ -61,11 +61,47 @@ namespace Shopify.Api.Models.Internals {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to /admin/script_tags/{0}.json.
+        /// </summary>
+        internal static string DeleteScriptTag {
+            get {
+                return ResourceManager.GetString("DeleteScriptTag", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to /admin/webhooks/{0}.json.
         /// </summary>
         internal static string DeleteWebhook {
             get {
                 return ResourceManager.GetString("DeleteWebhook", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to /admin/script_tags.json.
+        /// </summary>
+        internal static string GetScriptTagsAll {
+            get {
+                return ResourceManager.GetString("GetScriptTagsAll", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to /admin/script_tags/count.json.
+        /// </summary>
+        internal static string GetScriptTagsAllCount {
+            get {
+                return ResourceManager.GetString("GetScriptTagsAllCount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to /admin/script_tags/{0}.json.
+        /// </summary>
+        internal static string GetScriptTagSingle {
+            get {
+                return ResourceManager.GetString("GetScriptTagSingle", resourceCulture);
             }
         }
         
@@ -97,11 +133,29 @@ namespace Shopify.Api.Models.Internals {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to /admin/script_tags.json.
+        /// </summary>
+        internal static string PostScriptTagCreate {
+            get {
+                return ResourceManager.GetString("PostScriptTagCreate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to /admin/webhooks.json.
         /// </summary>
         internal static string PostWebhookCreate {
             get {
                 return ResourceManager.GetString("PostWebhookCreate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to /admin/script_tags/{0}.json.
+        /// </summary>
+        internal static string PutScriptTagUpdate {
+            get {
+                return ResourceManager.GetString("PutScriptTagUpdate", resourceCulture);
             }
         }
         

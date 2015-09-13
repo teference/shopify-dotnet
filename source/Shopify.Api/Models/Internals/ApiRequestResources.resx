@@ -135,4 +135,22 @@
   <data name="PutWebhookUpdate" xml:space="preserve">
     <value>/admin/webhooks/{0}.json</value>
   </data>
+  <data name="DeleteScriptTag" xml:space="preserve">
+    <value>/admin/script_tags/{0}.json</value>
+  </data>
+  <data name="GetScriptTagsAll" xml:space="preserve">
+    <value>/admin/script_tags.json</value>
+  </data>
+  <data name="GetScriptTagsAllCount" xml:space="preserve">
+    <value>/admin/script_tags/count.json</value>
+  </data>
+  <data name="GetScriptTagSingle" xml:space="preserve">
+    <value>/admin/script_tags/{0}.json</value>
+  </data>
+  <data name="PostScriptTagCreate" xml:space="preserve">
+    <value>/admin/script_tags.json</value>
+  </data>
+  <data name="PutScriptTagUpdate" xml:space="preserve">
+    <value>/admin/script_tags/{0}.json</value>
+  </data>
 </root>

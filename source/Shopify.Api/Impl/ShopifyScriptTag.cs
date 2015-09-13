@@ -3,49 +3,49 @@
     #region Namespace
 
     using System.Text;
-    using System.Globalization;
+    using System.Net.Http;
     using Newtonsoft.Json;
     using Shopify.Api.Models;
-    using System.Collections.Generic;
+    using System.Globalization;
     using System.Threading.Tasks;
-    using System.Net.Http;
+    using System.Collections.Generic;
     using Shopify.Api.Models.Internals;
 
     #endregion
 
-    internal sealed class ShopifyWebhook : IShopifyWebhook
+    internal sealed class ShopifyScriptTag : IShopifyScriptTag
     {
-        public async Task<IList<Webhook>> GetAsync(string shopUrl, string accessToken)
+        public async Task<IList<ScriptTag>> GetAsync(string shopUrl, string accessToken)
         {
             using (var httpClient = new HttpClient())
             {
                 httpClient.Configure(shopUrl, accessToken);
-                var response = await httpClient.GetAsync(ApiRequestResources.GetWebhooksAll);
+                var response = await httpClient.GetAsync(ApiRequestResources.GetScriptTagsAll);
                 if (!response.IsSuccessStatusCode)
                 {
                     return null;
                 }
 
                 var rawResponseContent = await response.Content.ReadAsStringAsync();
-                var webhooks = JsonConvert.DeserializeObject<WebhooksJson>(rawResponseContent);
-                return webhooks.Hooks;
+                var scriptTags = JsonConvert.DeserializeObject<ScriptTagsJson>(rawResponseContent);
+                return scriptTags.ScriptTags;
             }
         }
 
-        public async Task<Webhook> GetAsync(string shopUrl, string accessToken, string id)
+        public async Task<ScriptTag> GetAsync(string shopUrl, string accessToken, string id)
         {
             using (var httpClient = new HttpClient())
             {
                 httpClient.Configure(shopUrl, accessToken);
-                var response = await httpClient.GetAsync(string.Format(CultureInfo.InvariantCulture, ApiRequestResources.GetWebhookSingle, id));
+                var response = await httpClient.GetAsync(string.Format(CultureInfo.InvariantCulture, ApiRequestResources.GetScriptTagSingle, id));
                 if (!response.IsSuccessStatusCode)
                 {
                     return null;
                 }
 
                 var rawResponseContent = await response.Content.ReadAsStringAsync();
-                var webhookJson = JsonConvert.DeserializeObject<WebhookJson>(rawResponseContent);
-                return webhookJson.Webhook;
+                var scriptTagJson = JsonConvert.DeserializeObject<ScriptTagJson>(rawResponseContent);
+                return scriptTagJson.ScriptTag;
             }
         }
 
@@ -54,68 +54,67 @@
             using (var httpClient = new HttpClient())
             {
                 httpClient.Configure(shopUrl, accessToken);
-                var response = await httpClient.GetAsync(ApiRequestResources.GetWebhooksAllCount);
+                var response = await httpClient.GetAsync(ApiRequestResources.GetScriptTagsAllCount);
                 if (!response.IsSuccessStatusCode)
                 {
                     return 0;
                 }
 
                 var rawResponseContent = await response.Content.ReadAsStringAsync();
-                var webhooksCount = JsonConvert.DeserializeObject<WebhooksCountJson>(rawResponseContent);
-                return webhooksCount.Count;
+                var scriptTagsCount = JsonConvert.DeserializeObject<ScriptTagsCountJson>(rawResponseContent);
+                return scriptTagsCount.Count;
             }
         }
 
-        public async Task<Webhook> CreateAsync(string shopUrl, string accessToken, string address, WebhookTopic topic, WebhookFormat format = WebhookFormat.Json)
+        public async Task<ScriptTag> CreateAsync(string shopUrl, string accessToken, string source)
         {
             using (var httpClient = new HttpClient())
             {
                 httpClient.Configure(shopUrl, accessToken);
-                var webhookCreate = new WebhookCreateWrapJson
+                var scriptTagCreate = new ScriptTagCreateWrapJson
                 {
-                    Webhook = new WebhookCreateJson
+                    ScriptTag = new ScriptTagCreateJson
                     {
-                        Topic = topic.Convert(),
-                        Address = address,
-                        Format = format.ToString().ToLowerInvariant()
+                        Event = "onload",
+                        Source = source
                     }
                 };
-                var content = new StringContent(JsonConvert.SerializeObject(webhookCreate), Encoding.UTF8, "application/json");
-                var response = await httpClient.PostAsync(ApiRequestResources.PostWebhookCreate, content);
+                var content = new StringContent(JsonConvert.SerializeObject(scriptTagCreate), Encoding.UTF8, "application/json");
+                var response = await httpClient.PostAsync(ApiRequestResources.PostScriptTagCreate, content);
                 if (!response.IsSuccessStatusCode)
                 {
                     return null;
                 }
 
                 var rawResponseContent = await response.Content.ReadAsStringAsync();
-                var webhookJson = JsonConvert.DeserializeObject<WebhookJson>(rawResponseContent);
-                return webhookJson.Webhook;
+                var scriptTagJson = JsonConvert.DeserializeObject<ScriptTagJson>(rawResponseContent);
+                return scriptTagJson.ScriptTag;
             }
         }
 
-        public async Task<Webhook> UpdateAsync(string shopUrl, string accessToken, string id, string address)
+        public async Task<ScriptTag> UpdateAsync(string shopUrl, string accessToken, string id, string source)
         {
             using (var httpClient = new HttpClient())
             {
                 httpClient.Configure(shopUrl, accessToken);
-                var webhookCreate = new WebhookUpdateWrapJson
+                var webhookCreate = new ScriptTagUpdateWrapJson
                 {
-                    Webhook = new WebhookUpdateJson
+                    ScriptTag = new ScriptTagUpdateJson
                     {
                         Id = id,
-                        Address = address
+                        Source = source
                     }
                 };
                 var content = new StringContent(JsonConvert.SerializeObject(webhookCreate), Encoding.UTF8, "application/json");
-                var response = await httpClient.PutAsync(string.Format(CultureInfo.InvariantCulture, ApiRequestResources.PutWebhookUpdate, id), content);
+                var response = await httpClient.PutAsync(string.Format(CultureInfo.InvariantCulture, ApiRequestResources.PutScriptTagUpdate, id), content);
                 if (!response.IsSuccessStatusCode)
                 {
                     return null;
                 }
 
                 var rawResponseContent = await response.Content.ReadAsStringAsync();
-                var webhookJson = JsonConvert.DeserializeObject<WebhookJson>(rawResponseContent);
-                return webhookJson.Webhook;
+                var scriptTagJson = JsonConvert.DeserializeObject<ScriptTagJson>(rawResponseContent);
+                return scriptTagJson.ScriptTag;
             }
         }
 
@@ -124,7 +123,7 @@
             using (var httpClient = new HttpClient())
             {
                 httpClient.Configure(shopUrl, accessToken);
-                var response = await httpClient.DeleteAsync(string.Format(CultureInfo.InvariantCulture, ApiRequestResources.DeleteWebhook, id));
+                var response = await httpClient.DeleteAsync(string.Format(CultureInfo.InvariantCulture, ApiRequestResources.DeleteScriptTag, id));
                 return response.IsSuccessStatusCode;
             }
         }
