@@ -16,18 +16,18 @@
 
         private async Task DoTask()
         {
-            ////IShopifyClient shopifyClient = new ShopifyClient();
-            
-            ////var responseCreate = await shopifyClient.Webhooks.CreateAsync("", "", "http://example.net/", WebhookTopic.ShopUpdate);
+            IShopifyClient shopifyClient = new ShopifyClient();
+
+            ////var responseCreate = await shopifyClient.Webhooks.CreateAsync("", "", "", WebhookTopic.ShopUpdate);
             ////var responseAll = await shopifyClient.Webhooks.GetAsync("", "");
             ////var responseSingle = await shopifyClient.Webhooks.GetAsync("", "", "");
-            ////var updateResponse = await shopifyClient.Webhooks.UpdateAsync("", "", "", "http://example.com/");
+            ////var updateResponse = await shopifyClient.Webhooks.UpdateAsync("", "", "", "");
             ////var deleteResponse = await shopifyClient.Webhooks.DeleteAsync("", "", "");
 
-            ////var responseCreate = await shopifyClient.ScriptTag.CreateAsync("", "", "http://example.net/");
-            ////var responseAll = await shopifyClient.ScriptTag.GetAsync("", "");
+            ////var responseCreate = await shopifyClient.ScriptTag.CreateAsync("", "", "");
+            var responseAll = await shopifyClient.ScriptTag.GetAsync("", "");
             ////var responseSingle = await shopifyClient.ScriptTag.GetAsync("", "", "");
-            ////var updateResponse = await shopifyClient.ScriptTag.UpdateAsync("", "", "", "http://example.com/tesitng");
+            var updateResponse = await shopifyClient.ScriptTag.UpdateAsync("", "", "", "");
             ////var deleteResponse = await shopifyClient.ScriptTag.DeleteAsync("", "", "");
         }
     }

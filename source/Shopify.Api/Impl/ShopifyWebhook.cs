@@ -15,8 +15,24 @@
 
     internal sealed class ShopifyWebhook : IShopifyWebhook
     {
+        private readonly IShopifyClient client;
+
+        public ShopifyWebhook(IShopifyClient client)
+        {
+            this.client = client;
+        }
+
+        public async Task<IList<Webhook>> GetAsync()
+        {
+            this.client.Configuration.SingleShopContract();
+            return await this.GetAsync(this.client.Configuration.ShopDomain, this.client.Configuration.AccessToken);
+        }
+
         public async Task<IList<Webhook>> GetAsync(string shopUrl, string accessToken)
         {
+            shopUrl.PerCallShopUrlContract();
+            accessToken.PerCallAccessTokenContract();
+
             using (var httpClient = new HttpClient())
             {
                 httpClient.Configure(shopUrl, accessToken);
@@ -32,8 +48,17 @@
             }
         }
 
+        public async Task<Webhook> GetAsync(string id)
+        {
+            this.client.Configuration.SingleShopContract();
+            return await this.GetAsync(this.client.Configuration.ShopDomain, this.client.Configuration.AccessToken, id);
+        }
+
         public async Task<Webhook> GetAsync(string shopUrl, string accessToken, string id)
         {
+            shopUrl.PerCallShopUrlContract();
+            accessToken.PerCallAccessTokenContract();
+
             using (var httpClient = new HttpClient())
             {
                 httpClient.Configure(shopUrl, accessToken);
@@ -49,8 +74,17 @@
             }
         }
 
+        public async Task<int> CountAsync()
+        {
+            this.client.Configuration.SingleShopContract();
+            return await this.CountAsync(this.client.Configuration.ShopDomain, this.client.Configuration.AccessToken);
+        }
+
         public async Task<int> CountAsync(string shopUrl, string accessToken)
         {
+            shopUrl.PerCallShopUrlContract();
+            accessToken.PerCallAccessTokenContract();
+
             using (var httpClient = new HttpClient())
             {
                 httpClient.Configure(shopUrl, accessToken);
@@ -66,8 +100,17 @@
             }
         }
 
+        public async Task<Webhook> CreateAsync(string address, WebhookTopic topic, WebhookFormat format = WebhookFormat.Json)
+        {
+            this.client.Configuration.SingleShopContract();
+            return await this.CreateAsync(this.client.Configuration.ShopDomain, this.client.Configuration.AccessToken, address, topic, format);
+        }
+
         public async Task<Webhook> CreateAsync(string shopUrl, string accessToken, string address, WebhookTopic topic, WebhookFormat format = WebhookFormat.Json)
         {
+            shopUrl.PerCallShopUrlContract();
+            accessToken.PerCallAccessTokenContract();
+
             using (var httpClient = new HttpClient())
             {
                 httpClient.Configure(shopUrl, accessToken);
@@ -93,8 +136,17 @@
             }
         }
 
+        public async Task<Webhook> UpdateAsync(string id, string address)
+        {
+            this.client.Configuration.SingleShopContract();
+            return await this.UpdateAsync(this.client.Configuration.ShopDomain, this.client.Configuration.AccessToken, id, address);
+        }
+
         public async Task<Webhook> UpdateAsync(string shopUrl, string accessToken, string id, string address)
         {
+            shopUrl.PerCallShopUrlContract();
+            accessToken.PerCallAccessTokenContract();
+
             using (var httpClient = new HttpClient())
             {
                 httpClient.Configure(shopUrl, accessToken);
@@ -119,8 +171,17 @@
             }
         }
 
+        public async Task<bool> DeleteAsync(string id)
+        {
+            this.client.Configuration.SingleShopContract();
+            return await this.DeleteAsync(this.client.Configuration.ShopDomain, this.client.Configuration.AccessToken, id);
+        }
+
         public async Task<bool> DeleteAsync(string shopUrl, string accessToken, string id)
         {
+            shopUrl.PerCallShopUrlContract();
+            accessToken.PerCallAccessTokenContract();
+
             using (var httpClient = new HttpClient())
             {
                 httpClient.Configure(shopUrl, accessToken);

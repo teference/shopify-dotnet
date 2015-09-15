@@ -104,5 +104,39 @@
             httpClient.BaseAddress = new Uri(string.Format(CultureInfo.InvariantCulture, "https://{0}", shopUrl));
             httpClient.DefaultRequestHeaders.Add("X-Shopify-Access-Token", accessToken);
         }
+
+        internal static bool IsValidShopifyDomain(this string shopifyDomain)
+        {
+            return shopifyDomain.EndsWith(".myshopify.com");
+        }
+
+        internal static void SingleShopContract(this ShopifyClientConfiguration configuration)
+        {
+            if (null == configuration)
+            {
+                throw new ArgumentException("Shopify shop domain name and access token is required");
+            }
+        }
+
+        internal static void PerCallShopUrlContract(this string shopUrl)
+        {
+            if (string.IsNullOrWhiteSpace(shopUrl))
+            {
+                throw new ArgumentNullException("shopUrl");
+            }
+
+            if (!shopUrl.IsValidShopifyDomain())
+            {
+                throw new ArgumentException("ShopUrl does not contain a valid shopify domain name ending with *.myshopify.com");
+            }
+        }
+
+        internal static void PerCallAccessTokenContract(this string accessToken)
+        {
+            if (string.IsNullOrWhiteSpace(accessToken))
+            {
+                throw new ArgumentNullException("accessToken");
+            }
+        }
     }
 }
