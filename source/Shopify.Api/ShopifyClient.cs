@@ -47,8 +47,8 @@
 
         #region Properties
 
-        public IShopifyWebhook Webhooks { get; }
-        public IShopifyScriptTag ScriptTag { get; }
+        public IShopifyWebhook Webhooks { get; private set; }
+        public IShopifyScriptTag ScriptTag { get; private set; }
 
         public ShopifyClientConfiguration Configuration { get; set; }
 

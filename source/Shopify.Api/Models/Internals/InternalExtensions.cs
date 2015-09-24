@@ -86,7 +86,7 @@
                 case WebhookTopic.AppUninstalled:
                     return "app/uninstalled";
                 default:
-                    throw new ArgumentOutOfRangeException(nameof(topic));
+                    throw new ArgumentOutOfRangeException("topic");
             }
         }
 
@@ -131,7 +131,7 @@
         {
             if (string.IsNullOrWhiteSpace(shopUrl))
             {
-                throw new ArgumentNullException(nameof(shopUrl));
+                throw new ArgumentNullException("shopUrl");
             }
 
             if (!shopUrl.IsValidShopifyDomain())
@@ -144,7 +144,7 @@
         {
             if (string.IsNullOrWhiteSpace(accessToken))
             {
-                throw new ArgumentNullException(nameof(accessToken));
+                throw new ArgumentNullException("accessToken");
             }
         }
 

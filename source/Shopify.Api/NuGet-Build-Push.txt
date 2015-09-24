@@ -1,0 +1,1 @@
+﻿NuGet pack Shopify.Api.nuspec -Version 0.6.1 -Build -Properties Configuration=Release

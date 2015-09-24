@@ -1,7 +1,7 @@
 Shopify API C#.NET SDK
 ===================================
 
-![Shopify Logo](https://raw.githubusercontent.com/jsinh/shopify-dotnet/master/shopify-logo.png)
+![Shopify Logo](https://raw.githubusercontent.com/teference/shopify-dotnet/master/shopify-logo.png)
 
 ###Shopify API and OAuth access implementation in C#.NET
 
@@ -10,22 +10,22 @@ Shopify API C#.NET SDK
 ###<a name="latest-release"></a>Latest NuGet Release:
 This library can be used from NuGet channel:
 
-* [Shopify OAuth Package](https://www.nuget.org/packages/Shopify.OAuth/) - Version 0.6.3: `Install-Package Shopify.OAuth`
-* Shopify API Package: Coming soon
+* [Shopify OAuth Package](https://www.nuget.org/packages/Shopify.OAuth/) - Version 0.6.4: `Install-Package Shopify.OAuth`
+* [Shopify API Package](https://www.nuget.org/packages/Shopify.Api/) - Version 0.6.1: `Install-Package Shopify.Api`
 
 ---
 
 ###<a name="how-to"></a>Documentation:
 Further details on how to use / integrate Shopify.OAuth and / or Shopify.Api packages please refer this repository wiki pages.
 
-[Shopify .NET WIKI](https://github.com/jsinh/shopify-dotnet/wiki)
+[Shopify .NET WIKI](https://github.com/teference/shopify-dotnet/wiki)
 
 ---
 
 ###<a name="issues-bugs"></a>Issue / bug:
 
 If you have query, issues or bugs, it means you have shown interest and I thank you for that.
-Feel free to ask, suggest, report issue or post a bug [here](https://github.com/jsinh/shopify-dotnet/issues) in context of this library use.
+Feel free to ask, suggest, report issue or post a bug [here](https://github.com/teference/shopify-dotnet/issues) in context of this library use.
 
 Please note: If your query / issue / bug is related to Shopify API / OAuth, I recommend to post it to official [Shopify Support](https://docs.shopify.com/support) or [Shopify Forums](https://ecommerce.shopify.com/forums).
 
@@ -50,8 +50,8 @@ You can find all possible ways to connect with me at my [blog](http://blog.jsinh
 
 ###License
 
-This work is [licensed](https://raw.githubusercontent.com/jsinh/shopify-dotnet/master/LICENSE) under:
+This work is [licensed](https://raw.githubusercontent.com/teference/shopify-dotnet/master/LICENSE) under:
 
 The MIT License (MIT)
-Copyright (c) 2015 Jaspalsinh Chauhan (Jsinh.in)
+Copyright (c) 2015 Teference
 

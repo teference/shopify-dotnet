@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>Shopify.Api</id>
+    <version>$version$</version>
+    <title>Shopify API</title>
+    <authors>Jaspalsinh Chauhan</authors>
+    <owners>Jaspalsinh Chauhan</owners>
+    <licenseUrl>https://raw.githubusercontent.com/teference/shopify-dotnet/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/teference/shopify-dotnet</projectUrl>
+    <iconUrl>https://raw.githubusercontent.com/teference/shopify-dotnet/master/shopify-logo.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Use Shopify API C#.NET SDK to access Shopify API</description>
+    <releaseNotes>Initial release</releaseNotes>
+    <copyright>Copyright (c) 2015 Teference</copyright>
+    <tags>shopify, shopify apps, shopify api, api, api, shopify webhook, shopify scripttag</tags>
+    <dependencies>
+      <dependency id="Microsoft.Net.Http"
+                  version="2.2.29" />
+      <dependency id="Newtonsoft.Json"
+                  version="7.0.1" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="bin\$configuration$\Shopify.Api.dll"
+          target="lib\net40" />
+    <file src="bin\$configuration$\Shopify.Api.xml"
+          target="lib\net40" />
+
+    <file src="bin\$configuration$\Shopify.Api.dll"
+          target="lib\net45" />
+    <file src="bin\$configuration$\Shopify.Api.xml"
+          target="lib\net45" />
+
+    <file src="bin\$configuration$\Shopify.Api.dll"
+          target="lib\portable-net40%2Bsl5%2Bwp80%2Bwin8%2Bwpa81" />
+    <file src="bin\$configuration$\Shopify.Api.xml"
+          target="lib\portable-net40%2Bsl5%2Bwp80%2Bwin8%2Bwpa81" />
+  </files>
+</package>

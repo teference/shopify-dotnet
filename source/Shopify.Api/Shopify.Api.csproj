@@ -27,6 +27,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\Shopify.Api.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -35,6 +36,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Release\Shopify.Api.xml</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Contracts\IShopifyScriptTag.cs" />
@@ -105,8 +107,11 @@
   <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />
+    <None Include="Shopify.Api.nuspec" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="NuGet-Build-Push.txt" />
+  </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Models\Internals\ApiRequestResources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -25,7 +25,7 @@ namespace Teference.Shopify.Api
         {
             if (null == shopifyOAuth)
             {
-                throw new ArgumentNullException(nameof(shopifyOAuth));
+                throw new ArgumentNullException("shopifyOAuth");
             }
 
             var configuration = shopifyOAuth.Configuration ?? new OAuthConfiguration();

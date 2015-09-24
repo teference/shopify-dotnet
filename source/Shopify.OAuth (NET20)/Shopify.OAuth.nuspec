@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>Shopify.OAuth</id>
+    <version>$version$</version>
+    <title>Shopify OAuth</title>
+    <authors>Jaspalsinh Chauhan</authors>
+    <owners>Jaspalsinh Chauhan</owners>
+    <licenseUrl>https://raw.githubusercontent.com/teference/shopify-dotnet/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/teference/shopify-dotnet</projectUrl>
+    <iconUrl>https://raw.githubusercontent.com/teference/shopify-dotnet/master/shopify-logo.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Perform Shopify OAuth 2.0 - authentication / authorization to access Shopify API</description>
+    <releaseNotes>Copyright notice update and project shifted to Teference org. on GitHub</releaseNotes>
+    <copyright>Copyright (c) 2015 Teference</copyright>
+    <tags>shopify, shopify apps, oauth, api, authorization, oauth 2.0</tags>
+    <dependencies>
+      <dependency id="Newtonsoft.Json"
+                  version="7.0.1" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="bin\$configuration$\Shopify.OAuth.dll"
+          target="lib\net20" />
+    <file src="bin\$configuration$\Shopify.OAuth.xml"
+          target="lib\net20" />
+
+    <file src="bin\$configuration$\Shopify.OAuth.dll"
+          target="lib\net40" />
+    <file src="bin\$configuration$\Shopify.OAuth.xml"
+          target="lib\net40" />
+
+    <file src="bin\$configuration$\Shopify.OAuth.dll"
+          target="lib\net45" />
+    <file src="bin\$configuration$\Shopify.OAuth.xml"
+          target="lib\net45" />
+  </files>
+</package>
