@@ -1,18 +1,18 @@
-﻿#region Copyright Jsinh.in
+﻿#region Copyright Teference
 // ************************************************************************************
-// <copyright file="QueryStringBuilder.cs" company="Jsinh.in">
-// Copyright © Jaspalsinh Chauhan (Jsinh) 2015. All right reserved.
+// <copyright file="QueryStringBuilder.cs" company="Teference">
+// Copyright © Teference 2015. All right reserved.
 // </copyright>
 // ************************************************************************************
 // <author>Jaspalsinh Chauhan</author>
 // <email>jachauhan@gmail.com</email>
-// <project>Jsinh - Shopify API - C#.NET SDK</project>
+// <project>Teference - Shopify API - C#.NET SDK</project>
 // <remarks>Borrowed from Github OneDrive/onedrive-explorer-win - sample SDK [Commit from Ryan Gregg (github@rgregg)].</remarks>
 // <link>https://github.com/OneDrive/onedrive-explorer-win/blob/master/OneDriveSDK/Utility/QueryStringBuilder.cs</link>
 // ************************************************************************************
 #endregion
 
-namespace Jsinh.Shopify.Api
+namespace Teference.Shopify.Api
 {
     #region Namespace
 

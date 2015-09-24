@@ -1,6 +1,6 @@
 ﻿#region Copyright Teference
 // ************************************************************************************
-// <copyright file="WebhookCreateJson.cs" company="Teference">
+// <copyright file="WebhookField.cs" company="Teference">
 // Copyright © Teference 2015. All right reserved.
 // </copyright>
 // ************************************************************************************
@@ -10,17 +10,21 @@
 // ************************************************************************************
 #endregion
 
-namespace Teference.Shopify.Api.Models.Internals
+namespace Teference.Shopify.Api.Models
 {
-    using Newtonsoft.Json;
+    using System;
 
-    internal sealed class WebhookCreateJson
+    [Flags]
+    public enum WebhookField
     {
-        [JsonProperty("topic")]
-        public string Topic { get; set; }
-        [JsonProperty("address")]
-        public string Address { get; set; }
-        [JsonProperty("format")]
-        public string Format { get; set; }
+        None = 0,
+        Id = 1,
+        Address = 1 << 1,
+        Topic = 1 << 2,
+        CreatedAt = 1 << 3,
+        UpdatedAt = 1 << 4,
+        Format = 1 << 5,
+        Fields = 1 << 6,
+        MetafieldNamespace = 1 << 7
     }
 }

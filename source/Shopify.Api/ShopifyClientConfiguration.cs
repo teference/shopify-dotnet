@@ -1,4 +1,4 @@
-﻿namespace Shopify.Api
+﻿namespace Teference.Shopify.Api
 {
     public sealed class ShopifyClientConfiguration
     {

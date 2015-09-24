@@ -1,4 +1,4 @@
-﻿namespace Shopify.Api.Models.Internals
+﻿namespace Teference.Shopify.Api.Models.Internals
 {
     using Newtonsoft.Json;
 

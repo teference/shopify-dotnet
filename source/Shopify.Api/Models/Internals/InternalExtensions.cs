@@ -1,10 +1,12 @@
-﻿namespace Shopify.Api.Models.Internals
+﻿namespace Teference.Shopify.Api.Models.Internals
 {
     #region Namespace
 
     using System;
-    using System.Globalization;
+    using System.Linq;
+    using System.Text;
     using System.Net.Http;
+    using System.Globalization;
     using System.Net.Http.Headers;
 
     #endregion
@@ -105,11 +107,18 @@
             httpClient.DefaultRequestHeaders.Add("X-Shopify-Access-Token", accessToken);
         }
 
+        internal static bool IsValidUrlAddress(this string address)
+        {
+            Uri uriResult;
+            return Uri.TryCreate(address, UriKind.Absolute, out uriResult) && Uri.IsWellFormedUriString(address, UriKind.Absolute);
+        }
+
         internal static bool IsValidShopifyDomain(this string shopifyDomain)
         {
             return shopifyDomain.EndsWith(".myshopify.com");
         }
 
+        // ReSharper disable once UnusedParameter.Global
         internal static void SingleShopContract(this ShopifyClientConfiguration configuration)
         {
             if (null == configuration)
@@ -122,7 +131,7 @@
         {
             if (string.IsNullOrWhiteSpace(shopUrl))
             {
-                throw new ArgumentNullException("shopUrl");
+                throw new ArgumentNullException(nameof(shopUrl));
             }
 
             if (!shopUrl.IsValidShopifyDomain())
@@ -135,8 +144,56 @@
         {
             if (string.IsNullOrWhiteSpace(accessToken))
             {
-                throw new ArgumentNullException("accessToken");
+                throw new ArgumentNullException(nameof(accessToken));
             }
+        }
+
+        internal static string BuildWebhookFieldFilter(this WebhookField webhookField)
+        {
+            if (webhookField == WebhookField.None)
+            {
+                return string.Empty;
+            }
+
+            var webhookFieldFilterStringBuilder = new StringBuilder();
+            foreach (var webhookFieldFilterItem in Enum.GetValues(typeof(WebhookField)).Cast<WebhookField>().Where(webhookFieldFilterItem => webhookFieldFilterItem != WebhookField.None).Where(webhookFieldFilterItem => (webhookField & webhookFieldFilterItem) == webhookFieldFilterItem))
+            {
+                switch (webhookFieldFilterItem)
+                {
+                    case WebhookField.Id:
+                        webhookFieldFilterStringBuilder.Append("id");
+                        break;
+                    case WebhookField.Address:
+                        webhookFieldFilterStringBuilder.Append("address");
+                        break;
+                    case WebhookField.Topic:
+                        webhookFieldFilterStringBuilder.Append("topic");
+                        break;
+                    case WebhookField.CreatedAt:
+                        webhookFieldFilterStringBuilder.Append("created_at");
+                        break;
+                    case WebhookField.UpdatedAt:
+                        webhookFieldFilterStringBuilder.Append("updated_at");
+                        break;
+                    case WebhookField.Format:
+                        webhookFieldFilterStringBuilder.Append("format");
+                        break;
+                    case WebhookField.Fields:
+                        webhookFieldFilterStringBuilder.Append("fields");
+                        break;
+                    case WebhookField.MetafieldNamespace:
+                        webhookFieldFilterStringBuilder.Append("metafield_namespaces");
+                        break;
+                }
+                webhookFieldFilterStringBuilder.Append(',');
+            }
+
+            if (webhookFieldFilterStringBuilder.Length > 0 && webhookFieldFilterStringBuilder[webhookFieldFilterStringBuilder.Length - 1] == ',')
+            {
+                return webhookFieldFilterStringBuilder.ToString().Substring(0, webhookFieldFilterStringBuilder.Length - 1);
+            }
+
+            return webhookFieldFilterStringBuilder.ToString();
         }
     }
 }

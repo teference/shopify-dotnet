@@ -8,7 +8,7 @@
     <ProjectGuid>{B9C39BEC-13BF-43EC-BDC8-BC546D768195}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Shopify.Api</RootNamespace>
+    <RootNamespace>Teference.Shopify.Api</RootNamespace>
     <AssemblyName>Shopify.Api</AssemblyName>
     <DefaultLanguage>en-US</DefaultLanguage>
     <FileAlignment>512</FileAlignment>
@@ -44,6 +44,7 @@
     <Compile Include="Impl\ShopifyScriptTag.cs" />
     <Compile Include="Impl\ShopifyWebhook.cs" />
     <Compile Include="IShopifyClient.cs" />
+    <Compile Include="Models\Enums\WebhookField.cs" />
     <Compile Include="Models\Enums\WebhookFormat.cs" />
     <Compile Include="Models\Enums\WebhookTopic.cs" />
     <Compile Include="Models\Facets\ScriptTag.cs" />

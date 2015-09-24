@@ -1,7 +1,7 @@
-﻿#region Copyright Jsinh.in
+﻿#region Copyright Teference
 // ************************************************************************************
-// <copyright file="HttpType.cs" company="Jsinh.in">
-// Copyright © Jaspalsinh Chauhan (Jsinh) 2015. All right reserved.
+// <copyright file="HttpType.cs" company="Teference">
+// Copyright © Teference 2015. All right reserved.
 // </copyright>
 // ************************************************************************************
 // <author>Jaspalsinh Chauhan</author>
@@ -10,7 +10,7 @@
 // ************************************************************************************
 #endregion
 
-namespace Jsinh.Shopify.Api
+namespace Teference.Shopify.Api
 {
     internal enum HttpType
     {

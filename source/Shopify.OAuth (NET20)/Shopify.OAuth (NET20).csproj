@@ -7,7 +7,7 @@
     <ProjectGuid>{D3D8073E-63AE-4558-BD1B-351D413F0F38}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Jsinh.Shopify.Api</RootNamespace>
+    <RootNamespace>Teference.Shopify.Api</RootNamespace>
     <AssemblyName>Shopify.OAuth</AssemblyName>
     <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>

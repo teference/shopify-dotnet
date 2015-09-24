@@ -1,8 +1,8 @@
 ﻿namespace Shopify.ApiTest
 {
     using System;
-    using Shopify.Api;
-    using Shopify.Api.Models;
+    using Teference.Shopify.Api;
+    using Teference.Shopify.Api.Models;
     using System.Threading.Tasks;
 
     public class Program
@@ -16,19 +16,16 @@
 
         private async Task DoTask()
         {
-            IShopifyClient shopifyClient = new ShopifyClient();
+            IShopifyClient shopifyClient =
+                new ShopifyClient(new ShopifyClientConfiguration()
+                {
+                    AccessToken = Environment.GetEnvironmentVariable("ShopifyToken", EnvironmentVariableTarget.User),
+                    ShopDomain = Environment.GetEnvironmentVariable("ShopifyDomain", EnvironmentVariableTarget.User)
+                });
 
-            ////var responseCreate = await shopifyClient.Webhooks.CreateAsync("", "", "", WebhookTopic.ShopUpdate);
-            ////var responseAll = await shopifyClient.Webhooks.GetAsync("", "");
-            ////var responseSingle = await shopifyClient.Webhooks.GetAsync("", "", "");
-            ////var updateResponse = await shopifyClient.Webhooks.UpdateAsync("", "", "", "");
-            ////var deleteResponse = await shopifyClient.Webhooks.DeleteAsync("", "", "");
-
-            ////var responseCreate = await shopifyClient.ScriptTag.CreateAsync("", "", "");
-            var responseAll = await shopifyClient.ScriptTag.GetAsync("", "");
-            ////var responseSingle = await shopifyClient.ScriptTag.GetAsync("", "", "");
-            var updateResponse = await shopifyClient.ScriptTag.UpdateAsync("", "", "", "");
-            ////var deleteResponse = await shopifyClient.ScriptTag.DeleteAsync("", "", "");
+            var responseAll = await shopifyClient.Webhooks.GetAllAsync(topic: WebhookTopic.ShopUpdate);
+            ////var updateResponse = await shopifyClient.Webhooks.UpdateAsync("", "", "", "http://example.com/");
+            ///// var deleteResponse = await shopifyClient.Webhooks.DeleteAsync("", "", "");
         }
     }
 }

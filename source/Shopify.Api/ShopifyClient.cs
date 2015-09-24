@@ -1,9 +1,9 @@
-﻿namespace Shopify.Api
+﻿namespace Teference.Shopify.Api
 {
     #region Namespace
 
     using System;
-    using Shopify.Api.Models.Internals;
+    using Teference.Shopify.Api.Models.Internals;
 
     #endregion
 

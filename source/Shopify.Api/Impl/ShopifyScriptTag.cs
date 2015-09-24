@@ -1,15 +1,27 @@
-﻿namespace Shopify.Api
+﻿#region Copyright Teference
+// ************************************************************************************
+// <copyright file="ShopifyScriptTag.cs" company="Teference">
+// Copyright © Teference 2015. All right reserved.
+// </copyright>
+// ************************************************************************************
+// <author>Jaspalsinh Chauhan</author>
+// <email>jachauhan@gmail.com</email>
+// <project>Teference - Shopify API - C#.NET SDK</project>
+// ************************************************************************************
+#endregion
+
+namespace Teference.Shopify.Api
 {
     #region Namespace
 
     using System.Text;
     using System.Net.Http;
     using Newtonsoft.Json;
-    using Shopify.Api.Models;
+    using Teference.Shopify.Api.Models;
     using System.Globalization;
     using System.Threading.Tasks;
     using System.Collections.Generic;
-    using Shopify.Api.Models.Internals;
+    using Teference.Shopify.Api.Models.Internals;
 
     #endregion
 

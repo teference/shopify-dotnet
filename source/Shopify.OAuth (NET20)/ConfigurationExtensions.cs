@@ -1,16 +1,16 @@
-﻿#region Copyright Jsinh.in
+﻿#region Copyright Teference
 // ************************************************************************************
-// <copyright file="ConfigurationExtensions.cs" company="Jsinh.in">
-// Copyright © Jaspalsinh Chauhan (Jsinh) 2015. All right reserved.
+// <copyright file="ConfigurationExtensions.cs" company="Teference">
+// Copyright © Teference 2015. All right reserved.
 // </copyright>
 // ************************************************************************************
 // <author>Jaspalsinh Chauhan</author>
 // <email>jachauhan@gmail.com</email>
-// <project>Jsinh - Shopify OAuth Helper</project>
+// <project>Teference - Shopify OAuth Helper</project>
 // ************************************************************************************
 #endregion
 
-namespace Jsinh.Shopify.Api
+namespace Teference.Shopify.Api
 {
     #region Namespace
 
@@ -25,7 +25,7 @@ namespace Jsinh.Shopify.Api
         {
             if (null == shopifyOAuth)
             {
-                throw new ArgumentNullException("shopifyOAuth");
+                throw new ArgumentNullException(nameof(shopifyOAuth));
             }
 
             var configuration = shopifyOAuth.Configuration ?? new OAuthConfiguration();

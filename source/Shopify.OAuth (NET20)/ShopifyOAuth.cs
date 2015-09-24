@@ -1,16 +1,16 @@
-﻿#region Copyright Jsinh.in
+﻿#region Copyright Teference
 // ************************************************************************************
-// <copyright file="ShopifyOAuth.cs" company="Jsinh.in">
-// Copyright © Jaspalsinh Chauhan (Jsinh) 2015. All right reserved.
+// <copyright file="ShopifyOAuth.cs" company="Teference">
+// Copyright © Teference 2015. All right reserved.
 // </copyright>
 // ************************************************************************************
 // <author>Jaspalsinh Chauhan</author>
 // <email>jachauhan@gmail.com</email>
-// <project>Jsinh - Shopify OAuth Helper</project>
+// <project>Teference - Shopify OAuth Helper</project>
 // ************************************************************************************
 #endregion
 
-namespace Jsinh.Shopify.Api
+namespace Teference.Shopify.Api
 {
     #region Namespace
 

@@ -1,15 +1,28 @@
-﻿namespace Shopify.Api
+﻿#region Copyright Teference
+// ************************************************************************************
+// <copyright file="ShopifyWebhook.cs" company="Teference">
+// Copyright © Teference 2015. All right reserved.
+// </copyright>
+// ************************************************************************************
+// <author>Jaspalsinh Chauhan</author>
+// <email>jachauhan@gmail.com</email>
+// <project>Teference - Shopify API - C#.NET SDK</project>
+// ************************************************************************************
+#endregion
+
+namespace Teference.Shopify.Api
 {
     #region Namespace
 
+    using System;
     using System.Text;
     using System.Globalization;
     using Newtonsoft.Json;
-    using Shopify.Api.Models;
+    using Teference.Shopify.Api.Models;
     using System.Collections.Generic;
     using System.Threading.Tasks;
     using System.Net.Http;
-    using Shopify.Api.Models.Internals;
+    using Teference.Shopify.Api.Models.Internals;
 
     #endregion
 
@@ -22,21 +35,114 @@
             this.client = client;
         }
 
-        public async Task<IList<Webhook>> GetAsync()
+        public async Task<IList<Webhook>> GetAllAsync(
+            string address = "",
+            DateTime createdBefore = default(DateTime),
+            DateTime createdAfter = default(DateTime),
+            WebhookField fields = WebhookField.None,
+            int limit = 50,
+            int page = 1,
+            int idGreaterThan = 0,
+            WebhookTopic topic = WebhookTopic.None,
+            DateTime updatedBefore = default(DateTime),
+            DateTime updatedAfter = default(DateTime))
         {
             this.client.Configuration.SingleShopContract();
-            return await this.GetAsync(this.client.Configuration.ShopDomain, this.client.Configuration.AccessToken);
+            return await this.GetAllAsync(this.client.Configuration.ShopDomain, this.client.Configuration.AccessToken, address, createdBefore, createdAfter, fields, limit, page, idGreaterThan, topic, updatedBefore, updatedAfter);
         }
 
-        public async Task<IList<Webhook>> GetAsync(string shopUrl, string accessToken)
+        public async Task<IList<Webhook>> GetAllAsync(
+            string shopUrl,
+            string accessToken,
+            string address = "",
+            DateTime createdBefore = default(DateTime),
+            DateTime createdAfter = default(DateTime),
+            WebhookField fields = WebhookField.None,
+            int limit = 50,
+            int page = 1,
+            int idGreaterThan = 0,
+            WebhookTopic topic = WebhookTopic.None,
+            DateTime updatedBefore = default(DateTime),
+            DateTime updatedAfter = default(DateTime))
         {
+            //// Default contracts
             shopUrl.PerCallShopUrlContract();
             accessToken.PerCallAccessTokenContract();
 
+            //// Optional parameter validation
+            if (!string.IsNullOrWhiteSpace(address) && !address.IsValidUrlAddress())
+            {
+                throw new ArgumentException("Address parameter is not a well formed URL");
+            }
+
+            if (250 < limit)
+            {
+                throw new ArgumentException("Limit value cannot be more than 250, default is 50 if not specified");
+            }
+
+            if (0 == page)
+            {
+                throw new ArgumentException("Page value cannot be zero");
+            }
+
+            //// Build query string
+            var queryStringBuilder = new QueryStringBuilder();
+            if (!string.IsNullOrWhiteSpace(address))
+            {
+                queryStringBuilder.Add("address", address);
+            }
+
+            if (default(DateTime) != createdBefore)
+            {
+                queryStringBuilder.Add("created_at_max", createdBefore.ToString("yyyy-MM-dd HH:mm"));
+            }
+
+            if (default(DateTime) != createdAfter)
+            {
+                queryStringBuilder.Add("created_at_min", createdAfter.ToString("yyyy-MM-dd HH:mm"));
+            }
+
+            if (WebhookField.None != fields)
+            {
+                queryStringBuilder.Add("fields", fields.BuildWebhookFieldFilter());
+            }
+
+            if (0 != limit)
+            {
+                queryStringBuilder.Add("limit", limit.ToString(CultureInfo.InvariantCulture));
+            }
+
+            if (0 != page)
+            {
+                queryStringBuilder.Add("page", page.ToString(CultureInfo.InvariantCulture));
+            }
+
+            if (0 != idGreaterThan)
+            {
+                queryStringBuilder.Add("since_id", idGreaterThan.ToString(CultureInfo.InvariantCulture));
+            }
+
+            if (WebhookTopic.None != topic)
+            {
+                queryStringBuilder.Add("topic", topic.Convert());
+            }
+
+            if (default(DateTime) != updatedBefore)
+            {
+                queryStringBuilder.Add("updated_at_min", updatedBefore.ToString("yyyy-MM-dd HH:mm"));
+            }
+
+            if (default(DateTime) != updatedAfter)
+            {
+                queryStringBuilder.Add("updated_at_max", updatedAfter.ToString("yyyy-MM-dd HH:mm"));
+            }
+
+            //// Perform HTTP GET call to API
             using (var httpClient = new HttpClient())
             {
                 httpClient.Configure(shopUrl, accessToken);
-                var response = await httpClient.GetAsync(ApiRequestResources.GetWebhooksAll);
+                var queryStringParameters = queryStringBuilder.ToString();
+                var response = await httpClient.GetAsync(string.Format(CultureInfo.InvariantCulture, "{0}{1}", ApiRequestResources.GetWebhooksAll, string.IsNullOrWhiteSpace(queryStringParameters) ? string.Empty : queryStringParameters));
                 if (!response.IsSuccessStatusCode)
                 {
                     return null;
@@ -48,21 +154,31 @@
             }
         }
 
-        public async Task<Webhook> GetAsync(string id)
+        public async Task<Webhook> GetSingleAsync(string id, WebhookField fields = WebhookField.None)
         {
             this.client.Configuration.SingleShopContract();
-            return await this.GetAsync(this.client.Configuration.ShopDomain, this.client.Configuration.AccessToken, id);
+            return await this.GetSingleAsync(this.client.Configuration.ShopDomain, this.client.Configuration.AccessToken, id, fields);
         }
 
-        public async Task<Webhook> GetAsync(string shopUrl, string accessToken, string id)
+        public async Task<Webhook> GetSingleAsync(string shopUrl, string accessToken, string id, WebhookField fields = WebhookField.None)
         {
+            //// Default contracts
             shopUrl.PerCallShopUrlContract();
             accessToken.PerCallAccessTokenContract();
 
+            //// Build query string
+            var queryStringBuilder = new QueryStringBuilder();
+            if (WebhookField.None != fields)
+            {
+                queryStringBuilder.Add("fields", fields.BuildWebhookFieldFilter());
+            }
+
+            //// Perform HTTP GET call to API
             using (var httpClient = new HttpClient())
             {
                 httpClient.Configure(shopUrl, accessToken);
-                var response = await httpClient.GetAsync(string.Format(CultureInfo.InvariantCulture, ApiRequestResources.GetWebhookSingle, id));
+                var queryStringParameters = queryStringBuilder.ToString();
+                var response = await httpClient.GetAsync(string.Format(CultureInfo.InvariantCulture, "{0}{1}", string.Format(CultureInfo.InvariantCulture, ApiRequestResources.GetWebhookSingle, id), string.IsNullOrWhiteSpace(queryStringParameters) ? string.Empty : queryStringParameters));
                 if (!response.IsSuccessStatusCode)
                 {
                     return null;
@@ -74,21 +190,38 @@
             }
         }
 
-        public async Task<int> CountAsync()
+        public async Task<int> CountAsync(string address = "", WebhookTopic topic = WebhookTopic.None)
         {
             this.client.Configuration.SingleShopContract();
-            return await this.CountAsync(this.client.Configuration.ShopDomain, this.client.Configuration.AccessToken);
+            return await this.CountAsync(this.client.Configuration.ShopDomain, this.client.Configuration.AccessToken, address, topic);
         }
 
-        public async Task<int> CountAsync(string shopUrl, string accessToken)
+        public async Task<int> CountAsync(string shopUrl, string accessToken, string address = "", WebhookTopic topic = WebhookTopic.None)
         {
             shopUrl.PerCallShopUrlContract();
             accessToken.PerCallAccessTokenContract();
 
+            if (!string.IsNullOrWhiteSpace(address) && !address.IsValidUrlAddress())
+            {
+                throw new ArgumentException("Address parameter is not a well formed URL");
+            }
+
+            var queryStringBuilder = new QueryStringBuilder();
+            if (!string.IsNullOrWhiteSpace(address))
+            {
+                queryStringBuilder.Add("address", address);
+            }
+
+            if (WebhookTopic.None != topic)
+            {
+                queryStringBuilder.Add("topic", topic.Convert());
+            }
+
             using (var httpClient = new HttpClient())
             {
                 httpClient.Configure(shopUrl, accessToken);
-                var response = await httpClient.GetAsync(ApiRequestResources.GetWebhooksAllCount);
+                var queryStringParameters = queryStringBuilder.ToString();
+                var response = await httpClient.GetAsync(string.Format(CultureInfo.InvariantCulture, "{0}{1}", ApiRequestResources.GetWebhooksAllCount, string.IsNullOrWhiteSpace(queryStringParameters) ? string.Empty : queryStringParameters));
                 if (!response.IsSuccessStatusCode)
                 {
                     return 0;

@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Shopify.Api.Models.Internals {
+namespace Teference.Shopify.Api.Models.Internals {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace Shopify.Api.Models.Internals {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Shopify.Api.Models.Internals.ApiRequestResources", typeof(ApiRequestResources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Teference.Shopify.Api.Models.Internals.ApiRequestResources", typeof(ApiRequestResources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
