@@ -11,7 +11,7 @@ Shopify API C#.NET SDK
 This library can be used from NuGet channel:
 
 * [Shopify OAuth Package](https://www.nuget.org/packages/Shopify.OAuth/) - Version 0.6.4: `Install-Package Shopify.OAuth`
-* [Shopify API Package](https://www.nuget.org/packages/Shopify.Api/) - Version 0.6.1: `Install-Package Shopify.Api`
+* [Shopify API Package](https://www.nuget.org/packages/Shopify.Api/) - Version 0.6.2: `Install-Package Shopify.Api`
 
 ---
 

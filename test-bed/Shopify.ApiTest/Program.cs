@@ -2,7 +2,6 @@
 {
     using System;
     using Teference.Shopify.Api;
-    using Teference.Shopify.Api.Models;
     using System.Threading.Tasks;
 
     public class Program
@@ -23,9 +22,10 @@
                     ShopDomain = Environment.GetEnvironmentVariable("ShopifyDomain", EnvironmentVariableTarget.User)
                 });
 
-            var responseAll = await shopifyClient.Webhooks.GetAllAsync(topic: WebhookTopic.ShopUpdate);
+            ////var responseAll = await shopifyClient.Webhooks.GetAllAsync(topic: WebhookTopic.ShopUpdate);
             ////var updateResponse = await shopifyClient.Webhooks.UpdateAsync("", "", "", "http://example.com/");
             ///// var deleteResponse = await shopifyClient.Webhooks.DeleteAsync("", "", "");
+            ////var allscripttag = await shopifyClient.ScriptTag.GetAllAsync(fields: ScriptTagField.Id | ScriptTagField.Source);
         }
     }
 }

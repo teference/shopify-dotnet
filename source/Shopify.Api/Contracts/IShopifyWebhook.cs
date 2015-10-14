@@ -10,6 +10,7 @@
 // ************************************************************************************
 #endregion
 
+#pragma warning disable 1591
 namespace Teference.Shopify.Api
 {
     #region Namespace

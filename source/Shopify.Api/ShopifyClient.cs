@@ -14,7 +14,7 @@
         public ShopifyClient()
         {
             this.Webhooks = new ShopifyWebhook(this);
-            this.ScriptTag = new ShopifyScriptTag();
+            this.ScriptTag = new ShopifyScriptTag(this);
         }
 
         public ShopifyClient(ShopifyClientConfiguration configuration)

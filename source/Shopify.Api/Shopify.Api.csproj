@@ -46,6 +46,7 @@
     <Compile Include="Impl\ShopifyScriptTag.cs" />
     <Compile Include="Impl\ShopifyWebhook.cs" />
     <Compile Include="IShopifyClient.cs" />
+    <Compile Include="Models\Enums\ScriptTagField.cs" />
     <Compile Include="Models\Enums\WebhookField.cs" />
     <Compile Include="Models\Enums\WebhookFormat.cs" />
     <Compile Include="Models\Enums\WebhookTopic.cs" />

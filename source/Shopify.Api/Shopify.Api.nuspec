@@ -11,7 +11,7 @@
     <iconUrl>https://raw.githubusercontent.com/teference/shopify-dotnet/master/shopify-logo.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Use Shopify API C#.NET SDK to access Shopify API</description>
-    <releaseNotes>Initial release</releaseNotes>
+    <releaseNotes>Added WebHook and ScriptTag implementation with provision to set input parameters. Same intance of API client can be used to query single shop or multiple shops based on how the client configuration are set.</releaseNotes>
     <copyright>Copyright (c) 2015 Teference</copyright>
     <tags>shopify, shopify apps, shopify api, api, api, shopify webhook, shopify scripttag</tags>
     <dependencies>

@@ -140,6 +140,7 @@
             }
         }
 
+        // ReSharper disable once UnusedParameter.Global
         internal static void PerCallAccessTokenContract(this string accessToken)
         {
             if (string.IsNullOrWhiteSpace(accessToken))
@@ -194,6 +195,45 @@
             }
 
             return webhookFieldFilterStringBuilder.ToString();
+        }
+
+        internal static string BuildScriptTagFieldFilter(this ScriptTagField scriptTagField)
+        {
+            if (scriptTagField == ScriptTagField.None)
+            {
+                return string.Empty;
+            }
+
+            var scriptTagFieldFilterStringBuilder = new StringBuilder();
+            foreach (var scriptTagFieldFilterItem in Enum.GetValues(typeof(ScriptTagField)).Cast<ScriptTagField>().Where(scriptTagFieldFilterItem => scriptTagFieldFilterItem != ScriptTagField.None).Where(scriptTagFieldFilterItem => (scriptTagField & scriptTagFieldFilterItem) == scriptTagFieldFilterItem))
+            {
+                switch (scriptTagFieldFilterItem)
+                {
+                    case ScriptTagField.Id:
+                        scriptTagFieldFilterStringBuilder.Append("id");
+                        break;
+                    case ScriptTagField.Source:
+                        scriptTagFieldFilterStringBuilder.Append("src");
+                        break;
+                    case ScriptTagField.Event:
+                        scriptTagFieldFilterStringBuilder.Append("event");
+                        break;
+                    case ScriptTagField.CreatedAt:
+                        scriptTagFieldFilterStringBuilder.Append("created_at");
+                        break;
+                    case ScriptTagField.UpdatedAt:
+                        scriptTagFieldFilterStringBuilder.Append("updated_at");
+                        break;
+                }
+                scriptTagFieldFilterStringBuilder.Append(',');
+            }
+
+            if (scriptTagFieldFilterStringBuilder.Length > 0 && scriptTagFieldFilterStringBuilder[scriptTagFieldFilterStringBuilder.Length - 1] == ',')
+            {
+                return scriptTagFieldFilterStringBuilder.ToString().Substring(0, scriptTagFieldFilterStringBuilder.Length - 1);
+            }
+
+            return scriptTagFieldFilterStringBuilder.ToString();
         }
     }
 }
