@@ -1,1 +1,3 @@
 ﻿NuGet pack Shopify.Api.nuspec -Version 0.6.1 -Build -Properties Configuration=Release
+nuget.exe setApiKey API_KEY
+nuget.exe push Shopify.Api.*.*.*.nupkg
