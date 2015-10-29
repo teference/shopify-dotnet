@@ -23,5 +23,5 @@ using System.Resources;
 [assembly: AssemblyProduct("Shopify API C#.NET SDK")]
 [assembly: AssemblyCopyright("Copyright © Teference 2015")]
 [assembly: NeutralResourcesLanguage("en")]
-[assembly: AssemblyVersion("0.6.2")]
-[assembly: AssemblyFileVersion("0.6.2")]
+[assembly: AssemblyVersion("0.6.3")]
+[assembly: AssemblyFileVersion("0.6.3")]

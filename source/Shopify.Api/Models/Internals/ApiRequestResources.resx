@@ -153,4 +153,7 @@
   <data name="PutScriptTagUpdate" xml:space="preserve">
     <value>/admin/script_tags/{0}.json</value>
   </data>
+  <data name="GetShopAccountConfiguration" xml:space="preserve">
+    <value>/admin/shop.json</value>
+  </data>
 </root>

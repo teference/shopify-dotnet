@@ -106,6 +106,15 @@ namespace Teference.Shopify.Api.Models.Internals {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to /admin/shop.json.
+        /// </summary>
+        internal static string GetShopAccountConfiguration {
+            get {
+                return ResourceManager.GetString("GetShopAccountConfiguration", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to /admin/webhooks.json.
         /// </summary>
         internal static string GetWebhooksAll {

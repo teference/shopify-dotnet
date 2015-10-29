@@ -3,7 +3,11 @@
     #region Namespace
 
     using System;
+    using Models;
     using Teference.Shopify.Api.Models.Internals;
+    using System.Threading.Tasks;
+    using System.Net.Http;
+    using Newtonsoft.Json;
 
     #endregion
 
@@ -54,5 +58,33 @@
 
         #endregion
 
+        #region Methods
+
+        public async Task<ShopInfo> ShopInfo()
+        {
+            this.Configuration.SingleShopContract();
+            return await this.ShopInfo(this.Configuration.ShopDomain, this.Configuration.AccessToken);
+        }
+        public async Task<ShopInfo> ShopInfo(string shopUrl, string accessToken)
+        {
+            shopUrl.PerCallShopUrlContract();
+            accessToken.PerCallAccessTokenContract();
+
+            using (var httpClient = new HttpClient())
+            {
+                httpClient.Configure(shopUrl, accessToken);
+                var response = await httpClient.GetAsync(ApiRequestResources.GetShopAccountConfiguration);
+                if (!response.IsSuccessStatusCode)
+                {
+                    return null;
+                }
+
+                var rawResponseContent = await response.Content.ReadAsStringAsync();
+                var shopInfo = JsonConvert.DeserializeObject<ShopInfo>(rawResponseContent);
+                return shopInfo;
+            }
+        }
+
+        #endregion
     }
 }

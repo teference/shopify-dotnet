@@ -23,7 +23,7 @@ namespace Teference.Shopify.Api.Models
     public sealed class Webhook
     {
         [JsonProperty("id")]
-        public int Id { get; set; }
+        public long Id { get; set; }
         [JsonProperty("address")]
         public string Address { get; set; }
         [JsonProperty("topic")]

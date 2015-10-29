@@ -1,6 +1,6 @@
 ﻿#region Copyright Teference
 // ************************************************************************************
-// <copyright file="ScriptTag.cs" company="Teference">
+// <copyright file="CartInfo.cs" company="Teference">
 // Copyright © Teference 2015. All right reserved.
 // </copyright>
 // ************************************************************************************
@@ -16,20 +16,26 @@ namespace Teference.Shopify.Api.Models
 
     using System;
     using Newtonsoft.Json;
+    using System.Collections.Generic;
 
     #endregion
 
-    public sealed class ScriptTag
+    public sealed class CartInfo
     {
+        public CartInfo()
+        {
+            this.Items = new List<CartItem>();
+        }
+
         [JsonProperty("id")]
-        public long Id { get; set; }
-        [JsonProperty("src")]
-        public string Source { get; set; }
-        [JsonProperty("event")]
-        public string Event { get; set; }
+        public string Id { get; set; }
+        [JsonProperty("token")]
+        public string Token { get; set; }
         [JsonProperty("created_at")]
         public DateTime CreatedAt { get; set; }
         [JsonProperty("updated_at")]
         public DateTime UpdatedAt { get; set; }
+        [JsonProperty("line_items")]
+        public List<CartItem> Items { get; set; }
     }
 }
