@@ -186,7 +186,12 @@ namespace Teference.Shopify.Api
 
                 //// Not sure if that would help but I encountered this while fixing another BUG so going to keep it in place.
                 ServicePointManager.Expect100Continue = true;
-                ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls | SecurityProtocolType.Ssl3;
+#if NET20
+                ServicePointManager.SecurityProtocol = SecurityProtocolTypeExtensions.Tls12;
+#else
+                ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
+#endif
+
                 ServicePointManager.ServerCertificateValidationCallback = delegate { return true; };
 
                 httpWebRequest.ContentType = AppResources.DefaultHttpClientContentType;

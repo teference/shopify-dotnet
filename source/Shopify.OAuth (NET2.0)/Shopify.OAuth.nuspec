@@ -1,0 +1,80 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>Shopify.OAuth</id>
+    <version>0.6.6</version>
+    <title>Shopify OAuth</title>
+    <authors>Jaspalsinh Chauhan</authors>
+    <owners>Jaspalsinh Chauhan</owners>
+    <licenseUrl>https://raw.githubusercontent.com/teference/shopify-dotnet/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/teference/shopify-dotnet</projectUrl>
+    <iconUrl>https://raw.githubusercontent.com/teference/shopify-dotnet/master/shopify-logo.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Perform Shopify OAuth 2.0 - authentication / authorization to access Shopify API</description>
+    <releaseNotes>
+      Added support for TLS1.2 .NET 2.0 to .NET 4.7.2 by request from Tomaz Stucin (Refer for enabling TLS on older than .NET 4.5 version - https://support.microsoft.com/en-us/help/3154518/support-for-tls-system-default-versions-included-in-the-net-framework
+    </releaseNotes>
+    <copyright>Copyright (c) 2018 Teference</copyright>
+    <tags>shopify, shopify apps, oauth, api, authorization, oauth 2.0</tags>
+    <dependencies>
+      <dependency id="Newtonsoft.Json"
+                  version="7.0.1" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="bin\$configuration$\Shopify.OAuth.NET20.dll"
+          target="lib\net20" />
+    <file src="bin\$configuration$\Shopify.OAuth.NET20.xml"
+          target="lib\net20" />
+
+    <file src="bin\$configuration$\Shopify.OAuth.NET20.dll"
+          target="lib\net40" />
+    <file src="bin\$configuration$\Shopify.OAuth.NET20.xml"
+          target="lib\net40" />
+
+    <file src="..\Shopify.OAuth (NET45)\bin\$configuration$\Shopify.OAuth.NET45.dll"
+          target="lib\net45" />
+    <file src="..\Shopify.OAuth (NET45)\bin\$configuration$\Shopify.OAuth.NET45.xml"
+          target="lib\net45" />
+
+    <file src="..\Shopify.OAuth (NET45)\bin\$configuration$\Shopify.OAuth.NET45.dll"
+          target="lib\net451" />
+    <file src="..\Shopify.OAuth (NET45)\bin\$configuration$\Shopify.OAuth.NET45.xml"
+          target="lib\net451" />
+
+    <file src="..\Shopify.OAuth (NET45)\bin\$configuration$\Shopify.OAuth.NET45.dll"
+          target="lib\net452" />
+    <file src="..\Shopify.OAuth (NET45)\bin\$configuration$\Shopify.OAuth.NET45.xml"
+          target="lib\net452" />
+
+    <file src="..\Shopify.OAuth (NET45)\bin\$configuration$\Shopify.OAuth.NET45.dll"
+          target="lib\net46" />
+    <file src="..\Shopify.OAuth (NET45)\bin\$configuration$\Shopify.OAuth.NET45.xml"
+          target="lib\net46" />
+
+    <file src="..\Shopify.OAuth (NET45)\bin\$configuration$\Shopify.OAuth.NET45.dll"
+          target="lib\net461" />
+    <file src="..\Shopify.OAuth (NET45)\bin\$configuration$\Shopify.OAuth.NET45.xml"
+          target="lib\net461" />
+
+    <file src="..\Shopify.OAuth (NET45)\bin\$configuration$\Shopify.OAuth.NET45.dll"
+          target="lib\net462" />
+    <file src="..\Shopify.OAuth (NET45)\bin\$configuration$\Shopify.OAuth.NET45.xml"
+          target="lib\net462" />
+
+    <file src="..\Shopify.OAuth (NET45)\bin\$configuration$\Shopify.OAuth.NET45.dll"
+          target="lib\net47" />
+    <file src="..\Shopify.OAuth (NET45)\bin\$configuration$\Shopify.OAuth.NET45.xml"
+          target="lib\net47" />
+
+    <file src="..\Shopify.OAuth (NET45)\bin\$configuration$\Shopify.OAuth.NET45.dll"
+          target="lib\net471" />
+    <file src="..\Shopify.OAuth (NET45)\bin\$configuration$\Shopify.OAuth.NET45.xml"
+          target="lib\net471" />
+
+    <file src="..\Shopify.OAuth (NET45)\bin\$configuration$\Shopify.OAuth.NET45.dll"
+          target="lib\net472" />
+    <file src="..\Shopify.OAuth (NET45)\bin\$configuration$\Shopify.OAuth.NET45.xml"
+          target="lib\net472" />
+  </files>
+</package>
