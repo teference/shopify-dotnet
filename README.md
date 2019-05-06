@@ -3,11 +3,11 @@ Shopify API C#.NET SDK
 
 ![Shopify Logo](https://raw.githubusercontent.com/teference/shopify-dotnet/master/shopify-logo.png)
 
-###Shopify API and OAuth access implementation in C#.NET
+### Shopify API and OAuth access implementation in C#.NET
 
 ---
 
-###<a name="latest-release"></a>Latest NuGet Release:
+### <a name="latest-release"></a>Latest NuGet Release:
 This library can be used from NuGet channel:
 
 * [Shopify OAuth Package](https://www.nuget.org/packages/Shopify.OAuth/) - Version 0.6.6: `Install-Package Shopify.OAuth`
@@ -15,14 +15,14 @@ This library can be used from NuGet channel:
 
 ---
 
-###<a name="how-to"></a>Documentation:
+### <a name="how-to"></a>Documentation:
 Further details on how to use / integrate Shopify.OAuth and / or Shopify.Api packages please refer this repository wiki pages.
 
 [Shopify .NET WIKI](https://github.com/teference/shopify-dotnet/wiki)
 
 ---
 
-###<a name="issues-bugs"></a>Issue / bug:
+### <a name="issues-bugs"></a>Issue / bug:
 
 If you have query, issues or bugs, it means you have shown interest and I thank you for that.
 Feel free to ask, suggest, report issue or post a bug [here](https://github.com/teference/shopify-dotnet/issues) in context of this library use.
@@ -33,14 +33,14 @@ You can find all possible ways to connect with me at my [blog](http://blog.jsinh
 
 ---
 
-###<a name="references"></a>Reference:
+### <a name="references"></a>Reference:
 
 * [Shopify API](https://docs.shopify.com/api) - Official documentation
 * [Shopify API OAuth](https://docs.shopify.com/api/authentication/oauth) - Workflow details
 
 ---
 
-###<a name="credits"></a>Credit / disclaimer:
+### <a name="credits"></a>Credit / disclaimer:
 
 * Shopify logo used in this readme file is owned by and copyright of Shopify Inc.
 * I am not affiliated with Shopify team, this work is solely undertaken by me.
@@ -48,7 +48,7 @@ You can find all possible ways to connect with me at my [blog](http://blog.jsinh
 
 ---
 
-###License
+### License
 
 This work is [licensed](https://raw.githubusercontent.com/teference/shopify-dotnet/master/LICENSE) under:
 
