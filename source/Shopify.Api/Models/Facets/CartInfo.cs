@@ -4,9 +4,7 @@
 // Copyright © Teference 2015. All right reserved.
 // </copyright>
 // ************************************************************************************
-// <author>Jaspalsinh Chauhan</author>
-// <email>jachauhan@gmail.com</email>
-// <project>Teference - Shopify API - C#.NET SDK</project>
+// <project>Shopify API - C#.NET SDK</project>
 // ************************************************************************************
 #endregion
 
